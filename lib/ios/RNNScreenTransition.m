@@ -34,16 +34,9 @@
 
 - (double)maxDuration {
 	double maxDuration = 0;
-	if ([self.topBar maxDuration] > 0) {
-		maxDuration = [self.topBar maxDuration];
+	for (RNNElementTransitionOptions *option in @[_topBar, _content, _bottomTabs]) {
+		maxDuration = MAX(maxDuration, option.maxDuration);
 	}
-	if ([self.content maxDuration] > 0) {
-		maxDuration = [self.content maxDuration];
-	}
-	if ([self.bottomTabs maxDuration] > 0) {
-		maxDuration = [self.bottomTabs maxDuration];
-	}
-	
 	return maxDuration;
 }
 

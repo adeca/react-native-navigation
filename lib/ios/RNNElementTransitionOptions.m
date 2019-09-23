@@ -21,16 +21,9 @@
 
 - (double)maxDuration {
 	double maxDuration = 0;
-	if ([_x.duration getWithDefaultValue:0] > maxDuration) {
-		maxDuration = [_x.duration getWithDefaultValue:0];
+	for (RNNAnimationConfigurationOptions *option in @[_alpha, _x, _y]) {
+		maxDuration = MAX(maxDuration, [option.duration getWithDefaultValue:0]);
 	}
-	if ([_y.duration getWithDefaultValue:0] > maxDuration) {
-		maxDuration = [_y.duration getWithDefaultValue:0];
-	}
-	if ([_alpha.duration getWithDefaultValue:0] > maxDuration) {
-		maxDuration = [_alpha.duration getWithDefaultValue:0];
-	}
-	
 	return maxDuration;
 }
 

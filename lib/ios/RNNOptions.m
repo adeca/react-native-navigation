@@ -12,13 +12,14 @@
 - (RNNOptions *)mergeOptions:(RNNOptions *)otherOptions overrideOptions:(BOOL)override {
 	for (id prop in [self objectProperties:otherOptions]) {
 		id value = [otherOptions valueForKey:prop];
-		if ([value isKindOfClass:[RNNOptions class]]) {
-			[[self valueForKey:prop] mergeOptions:value overrideOptions:override];
+		id currentValue = [self valueForKey:prop];
+		if (currentValue && [value isKindOfClass:[RNNOptions class]]) {
+			[currentValue mergeOptions:value overrideOptions:override];
 		} else if ([value isKindOfClass:[Param class]]) {
-			if ((((Param *)value).hasValue) && (override || !((Param *)[self valueForKey:prop]).hasValue)) {
+			if ((((Param *)value).hasValue) && (override || !((Param *)currentValue).hasValue)) {
 				[self setValue:value forKey:prop];
 			}
-		} else if (value && (override || ![self valueForKey:prop])) {
+		} else if (value && (override || !currentValue)) {
 			[self setValue:value forKey:prop];
 		}
 	}

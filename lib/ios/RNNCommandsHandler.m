@@ -179,8 +179,8 @@ static NSString* const setDefaultOptions	= @"setDefaultOptions";
 	RNNNavigationOptions* options = newVC.resolveOptions;
 	__weak typeof(RNNEventEmitter*) weakEventEmitter = _eventEmitter;
 
-	[newVC renderTreeAndWait:([options.animations.setStackRoot.waitForRender getWithDefaultValue:NO]) perform:^{
-		[_stackManager setStackChildren:childViewControllers fromViewController:fromVC animated:[options.animations.setStackRoot.enable getWithDefaultValue:YES] completion:^{
+	[newVC renderTreeAndWait:([options.animations.push.waitForRender getWithDefaultValue:NO]) perform:^{
+		[_stackManager setStackChildren:childViewControllers fromViewController:fromVC animated:[options.animations.push.enable getWithDefaultValue:YES] completion:^{
 			[weakEventEmitter sendOnNavigationCommandCompletion:setStackRoot commandId:commandId params:@{@"componentId": componentId}];
 			completion();
 		} rejection:rejection];

@@ -268,6 +268,10 @@ static NSString* const setDefaultOptions	= @"setDefaultOptions";
 	
 	UIViewController *modalToDismiss = (UIViewController *)[RNNLayoutManager findComponentForId:componentId];
 	
+	if (!modalToDismiss) {
+		return;
+	}
+	
 	if (!modalToDismiss.isModal) {
 		[RNNErrorHandler reject:reject withErrorCode:1013 errorDescription:@"component is not a modal"];
 		return;

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ComponentProvider } from 'react-native';
 import * as  _ from 'lodash';
 import { polyfill } from 'react-lifecycles-compat';
-import hoistNonReactStatics = require('hoist-non-react-statics');
+import hoistNonReactStatics from 'hoist-non-react-statics';
 
 import { Store } from './Store';
 import { ComponentEventsObserver } from '../events/ComponentEventsObserver';

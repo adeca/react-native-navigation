@@ -2,6 +2,9 @@
 #import "RNNComponentViewController.h"
 #import "RNNErrorHandler.h"
 #import "RNNDefaultOptionsHelper.h"
+#import "RNNAnimationsOptions.h"
+#import "RNNElementTransitionOptions.h"
+#import "RNNScreenTransition.h"
 #import "UIViewController+RNNOptions.h"
 #import "React/RCTI18nUtil.h"
 #import "UIViewController+LayoutProtocol.h"
@@ -253,7 +256,7 @@ static NSString* const setDefaultOptions	= @"setDefaultOptions";
 	UIViewController *newVc = [_controllerFactory createLayout:layout];
 	
 	[newVc renderTreeAndWait:[newVc.resolveOptions.animations.showModal.waitForRender getWithDefaultValue:NO] perform:^{
-		[_modalManager showModal:newVc animated:[newVc.resolveOptions.animations.showModal.enable getWithDefaultValue:YES] hasCustomAnimation:newVc.resolveOptions.animations.showModal.hasCustomAnimation completion:^(NSString *componentId) {
+		[_modalManager showModal:newVc animated:[newVc.resolveOptions.animations.showModal.enable getWithDefaultValue:YES] hasCustomAnimation:newVc.resolveOptions.animations.showModal.hasAnimation completion:^(NSString *componentId) {
 			[_eventEmitter sendOnNavigationCommandCompletion:showModal commandId:commandId params:@{@"layout": layout}];
 			completion(newVc.layoutInfo.componentId);
 		}];

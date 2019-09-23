@@ -13,4 +13,6 @@
 - (BOOL)hasCustomAnimation;
 - (double)maxDuration;
 
+- (instancetype)initWithContentTransition:(RNNElementTransitionOptions*)content;
+
 @end

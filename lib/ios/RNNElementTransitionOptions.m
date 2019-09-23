@@ -1,4 +1,5 @@
 #import "RNNElementTransitionOptions.h"
+#import "RNNAnimationConfigurationOptions.h"
 
 @implementation RNNElementTransitionOptions
 
@@ -8,7 +9,9 @@
 	self.alpha = [[RNNAnimationConfigurationOptions alloc] initWithDict:dict[@"alpha"]];
 	self.x = [[RNNAnimationConfigurationOptions alloc] initWithDict:dict[@"x"]];
 	self.y = [[RNNAnimationConfigurationOptions alloc] initWithDict:dict[@"y"]];
-
+	self.enable = [BoolParser parse:dict key:@"enabled"];
+	self.waitForRender = [BoolParser parse:dict key:@"waitForRender"];
+	
 	return self;
 }
 

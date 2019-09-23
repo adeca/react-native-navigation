@@ -1,6 +1,7 @@
 #import "RNNModalManager.h"
 #import "RNNComponentViewController.h"
 #import "RNNAnimationsTransitionDelegate.h"
+#import "RNNElementTransitionOptions.h"
 #import "RNNLayoutProtocol.h"
 
 @implementation RNNModalManager {
@@ -29,7 +30,7 @@
 	UIViewController* topVC = [self topPresentedVC];
 	topVC.definesPresentationContext = YES;
 	
-	RNNAnimationsTransitionDelegate* tr = [[RNNAnimationsTransitionDelegate alloc] initWithScreenTransition:viewController.resolveOptions.animations.showModal isDismiss:NO];
+	RNNAnimationsTransitionDelegate* tr = [[RNNAnimationsTransitionDelegate alloc] initWithElementTransition:viewController.resolveOptions.animations.showModal isDismiss:NO];
 	if (hasCustomAnimation) {
 		viewController.transitioningDelegate = tr;
 	}
@@ -70,8 +71,8 @@
 	}
 
 	UIViewController* topPresentedVC = [self topPresentedVC];
-	RNNAnimationsTransitionDelegate* tr = [[RNNAnimationsTransitionDelegate alloc] initWithScreenTransition:modalToDismiss.resolveOptions.animations.dismissModal isDismiss:YES];
-	if ([options.animations.dismissModal hasCustomAnimation]) {
+	RNNAnimationsTransitionDelegate* tr = [[RNNAnimationsTransitionDelegate alloc] initWithElementTransition:modalToDismiss.resolveOptions.animations.dismissModal isDismiss:YES];
+	if ([options.animations.dismissModal hasAnimation]) {
 		[self topViewControllerParent:modalToDismiss].transitioningDelegate = tr;
 	}
 

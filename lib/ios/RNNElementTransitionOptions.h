@@ -1,5 +1,5 @@
 #import "RNNOptions.h"
-#import "RNNAnimationConfigurationOptions.h"
+@class RNNAnimationConfigurationOptions;
 
 @interface RNNElementTransitionOptions : RNNOptions
 
@@ -10,6 +10,7 @@
 @property (nonatomic, strong) RNNAnimationConfigurationOptions* scaleY;
 @property (nonatomic, strong) RNNAnimationConfigurationOptions* rotationX;
 @property (nonatomic, strong) RNNAnimationConfigurationOptions* rotationY;
+@property (nonatomic, strong) Bool* enable;
 @property (nonatomic, strong) Bool* waitForRender;
 
 - (double)maxDuration;

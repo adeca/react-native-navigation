@@ -1,4 +1,7 @@
 #import "RNNAnimationsTransitionDelegate.h"
+#import "RNNAnimationConfigurationOptions.h"
+#import "RNNElementTransitionOptions.h"
+#import "RNNScreenTransition.h"
 
 @implementation RNNAnimationsTransitionDelegate
 
@@ -7,6 +10,13 @@
 	self.screenTransition = screenTransition;
 	self.isDismiss = isDismiss;
 	return self;
+}
+
+- (instancetype)initWithElementTransition:(RNNElementTransitionOptions *)elementTransition isDismiss:(BOOL)isDismiss {
+	
+	RNNScreenTransition *screenTransition = [[RNNScreenTransition alloc] initWithContentTransition:elementTransition];
+	
+	return [self initWithScreenTransition:screenTransition isDismiss:isDismiss];
 }
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {

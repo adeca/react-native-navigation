@@ -1,4 +1,6 @@
 #import "RNNPushAnimation.h"
+#import "RNNAnimationConfigurationOptions.h"
+#import "RNNElementTransitionOptions.h"
 
 @implementation RNNPushAnimation
 

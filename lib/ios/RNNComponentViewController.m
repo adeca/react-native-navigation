@@ -1,5 +1,6 @@
 #import "RNNComponentViewController.h"
 #import "RNNAnimationsTransitionDelegate.h"
+#import "RNNScreenTransition.h"
 #import "UIViewController+LayoutProtocol.h"
 
 @implementation RNNComponentViewController

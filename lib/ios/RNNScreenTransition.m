@@ -2,6 +2,10 @@
 
 @implementation RNNScreenTransition
 
+- (instancetype)init {
+	return [self initWithDict:@{}];
+}
+
 - (instancetype)initWithDict:(NSDictionary *)dict {
 	self = [super init];
 
@@ -11,6 +15,16 @@
 	self.enable = [BoolParser parse:dict key:@"enabled"];
 	self.waitForRender = [BoolParser parse:dict key:@"waitForRender"];
 
+	return self;
+}
+
+- (instancetype)initWithContentTransition:(RNNElementTransitionOptions*)content {
+	self = [self init];
+	
+	self.content = content;
+	self.enable = content.enable;
+	self.waitForRender = content.waitForRender;
+	
 	return self;
 }
 

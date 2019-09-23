@@ -3,7 +3,7 @@ import { ImageRequireSource, Insets } from 'react-native';
 
 type Color = string;
 type FontFamily = string;
-type FontWeight = 'regular' | 'bold' | 'thin' | 'ultraLight' | 'light' | 'medium' | 'semibold' | 'heavy' | 'black';
+type FontWeight = 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
 type LayoutOrientation = 'portrait' | 'landscape';
 type AndroidDensityNumber = number;
 type SystemItemIcon = 'done' | 'cancel' | 'edit'

@@ -1,5 +1,6 @@
 #import "RNNFontAttributesCreator.h"
 #import "RCTConvert+UIFontWeight.h"
+#import <React/RCTFont.h>
 
 @implementation RNNFontAttributesCreator
 
@@ -20,17 +21,11 @@
 + (NSDictionary *)createWithDictionary:(NSDictionary *)attributesDictionary fontFamily:(NSString *)fontFamily fontSize:(NSNumber *)fontSize fontWeight:(NSString *)fontWeight color:(UIColor *)color {
 	NSMutableDictionary* titleTextAttributes = [NSMutableDictionary dictionaryWithDictionary:attributesDictionary];
 	if (fontFamily || fontSize || color || fontWeight) {
-		CGFloat resolvedFontSize = fontSize ? fontSize.floatValue : 17;
 		if (color) {
 			titleTextAttributes[NSForegroundColorAttributeName] = color;
 		}
-		if (fontWeight) {
-			titleTextAttributes[NSFontAttributeName] = [UIFont systemFontOfSize:resolvedFontSize weight:[RCTConvert UIFontWeight:fontWeight]];
-		} else if (fontFamily){
-			titleTextAttributes[NSFontAttributeName] = [UIFont fontWithName:fontFamily size:resolvedFontSize];
-		} else {
-			titleTextAttributes[NSFontAttributeName] = [UIFont systemFontOfSize:resolvedFontSize];
-		}
+		UIFont *font = [RCTFont updateFont:nil withFamily:fontFamily size:(fontSize ?: @17) weight:fontWeight style:nil variant:nil scaleMultiplier:1];
+		titleTextAttributes[NSFontAttributeName] = font;
 	}
 	
 	return titleTextAttributes;

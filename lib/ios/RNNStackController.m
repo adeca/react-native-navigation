@@ -1,9 +1,15 @@
 #import "RNNStackController.h"
 #import "RNNComponentViewController.h"
+#import "RNNNavigationBar.h"
 
 const NSInteger TOP_BAR_TRANSPARENT_TAG = 78264803;
 
 @implementation RNNStackController
+
+- (instancetype)init {
+	self = [super initWithNavigationBarClass:[RNNNavigationBar class] toolbarClass:nil];
+	return self;
+}
 
 -(void)setDefaultOptions:(RNNNavigationOptions *)defaultOptions {
 	[super setDefaultOptions:defaultOptions];

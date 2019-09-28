@@ -31,6 +31,7 @@
 
 -(instancetype)init:(NSString*)buttonId withCustomView:(RCTRootView *)reactView componentRegistry:(RNNReactComponentRegistry *)componentRegistry {
 	self = [super initWithCustomView:reactView];
+	reactView.translatesAutoresizingMaskIntoConstraints = false;
 	
 	self.componentRegistry = componentRegistry;
 	reactView.sizeFlexibility = RCTRootViewSizeFlexibilityWidthAndHeight;

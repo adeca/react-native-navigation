@@ -240,6 +240,8 @@
 		50F5DFC61F407AA0001A00BC /* RNNStackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F5DFC41F407AA0001A00BC /* RNNStackController.m */; };
 		651E1F8A21FD624600DFEA19 /* UISplitViewController+RNNOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 651E1F8921FD624600DFEA19 /* UISplitViewController+RNNOptions.m */; };
 		651E1F8D21FD642100DFEA19 /* RNNSplitViewControllerPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 651E1F8C21FD642100DFEA19 /* RNNSplitViewControllerPresenter.m */; };
+		7190CEBB233FE8A600BC48F0 /* RNNNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 7190CEB9233FE8A500BC48F0 /* RNNNavigationBar.h */; };
+		7190CEBC233FE8A600BC48F0 /* RNNNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7190CEBA233FE8A500BC48F0 /* RNNNavigationBar.m */; };
 		7365071121E4B16F004E020F /* RCTConvert+UIBarButtonSystemItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 7365070F21E4B16F004E020F /* RCTConvert+UIBarButtonSystemItem.h */; };
 		7365071221E4B16F004E020F /* RCTConvert+UIBarButtonSystemItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7365071021E4B16F004E020F /* RCTConvert+UIBarButtonSystemItem.m */; };
 		7B1126A01E2D263F00F9B03B /* RNNEventEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B11269F1E2D263F00F9B03B /* RNNEventEmitter.m */; };
@@ -591,6 +593,8 @@
 		651E1F8921FD624600DFEA19 /* UISplitViewController+RNNOptions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UISplitViewController+RNNOptions.m"; sourceTree = "<group>"; };
 		651E1F8B21FD63F400DFEA19 /* RNNSplitViewControllerPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNNSplitViewControllerPresenter.h; sourceTree = "<group>"; };
 		651E1F8C21FD642100DFEA19 /* RNNSplitViewControllerPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNNSplitViewControllerPresenter.m; sourceTree = "<group>"; };
+		7190CEB9233FE8A500BC48F0 /* RNNNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNNNavigationBar.h; sourceTree = "<group>"; };
+		7190CEBA233FE8A500BC48F0 /* RNNNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNNNavigationBar.m; sourceTree = "<group>"; };
 		7365070F21E4B16F004E020F /* RCTConvert+UIBarButtonSystemItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RCTConvert+UIBarButtonSystemItem.h"; sourceTree = "<group>"; };
 		7365071021E4B16F004E020F /* RCTConvert+UIBarButtonSystemItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RCTConvert+UIBarButtonSystemItem.m"; sourceTree = "<group>"; };
 		7B11269E1E2D263F00F9B03B /* RNNEventEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNEventEmitter.h; sourceTree = "<group>"; };
@@ -1222,6 +1226,8 @@
 				E8367B7F1F7A8A4700675C05 /* VICMAImageView.m */,
 				E8A4300F1F9CB87B00B61A20 /* RNNAnimatedView.h */,
 				E8A430101F9CB87B00B61A20 /* RNNAnimatedView.m */,
+				7190CEB9233FE8A500BC48F0 /* RNNNavigationBar.h */,
+				7190CEBA233FE8A500BC48F0 /* RNNNavigationBar.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -1245,6 +1251,7 @@
 				506A2B1420973DFD00F43A95 /* RNNErrorHandler.h in Headers */,
 				263905B01E4C6F440023D7D3 /* MMDrawerController+Subclass.h in Headers */,
 				E8AEDB4A1F5C0BAF000F5A6A /* RNNInteractivePopAnimator.h in Headers */,
+				7190CEBB233FE8A600BC48F0 /* RNNNavigationBar.h in Headers */,
 				263905B71E4C6F440023D7D3 /* UIViewController+MMDrawerController.h in Headers */,
 				C2A57A1C21E815F80066711C /* InteractivePopGestureDelegate.h in Headers */,
 				507F43F41FF4FCFE00D9425B /* HMSegmentedControl.h in Headers */,
@@ -1525,6 +1532,7 @@
 				5012241F217366D4000F5F98 /* ColorParser.m in Sources */,
 				651E1F8D21FD642100DFEA19 /* RNNSplitViewControllerPresenter.m in Sources */,
 				501E0218213E7EA3003365C5 /* RNNReactView.m in Sources */,
+				7190CEBC233FE8A600BC48F0 /* RNNNavigationBar.m in Sources */,
 				50BE951220B5A787004F5DF5 /* RNNStatusBarOptions.m in Sources */,
 				50495953216F62BD006D2B81 /* NullNumber.m in Sources */,
 				5012242721737278000F5F98 /* NullImage.m in Sources */,
